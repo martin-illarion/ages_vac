@@ -71,6 +71,7 @@ for b in bl:
         #print(out_path + b + ".csv")
         for l in reversed(line[b]):
             csv_outfile.write(l)
+            #print(l)
     with open(out_path + b + "_2.csv","w", encoding='utf-8') as csv_outfile:
         #print(out_path + b + ".csv")
         for l in reversed(line_2[b]):
