@@ -4,6 +4,8 @@ curl https://info.gesundheitsministerium.gv.at/data/timeline-bbg.csv -o $pt/time
 
 sed -i "s/;/,/g" $pt/timeline-bbg.csv
 
+echo "" >> $pt/timeline-bbg.csv
+
 head -n1 $pt/timeline-bbg.csv > $pt/bbg-österreich.csv
 head -n1 $pt/timeline-bbg.csv > $pt/bbg-wien.csv
 head -n1 $pt/timeline-bbg.csv > $pt/bbg-niederösterreich.csv
