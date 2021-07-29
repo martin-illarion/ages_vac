@@ -17,13 +17,13 @@ csv_file = open(l_file, 'wb')
 csv_file.write(url_content)
 csv_file.close()
 
-bl_list=["Burgenland","Kärnten","Niederösterreich","Oberösterreich","Salzburg","Steiermark","Tirol","Vorarlberg","Wien"]
+bl_list=["Burgenland","KÃ¤rnten","NiederÃ¶sterreich","OberÃ¶sterreich","Salzburg","Steiermark","Tirol","Vorarlberg","Wien"]
 
 gkz_list = {
     "101": "Eisenstadt (Stadt)",
     "102": "Rust (Stadt)",
     "103": "Eisenstadt-Umgebung",
-    "104": "Güssing",
+    "104": "GÃ¼ssing",
     "105": "Jennersdorf",
     "106": "Mattersburg",
     "107": "Neusiedl am See",
@@ -36,18 +36,18 @@ gkz_list = {
     "205": "Sankt Veit an der Glan",
     "206": "Spittal an der Drau",
     "207": "Villach Land",
-    "208": "Völkermarkt",
+    "208": "VÃ¶lkermarkt",
     "209": "Wolfsberg",
     "210": "Feldkirchen",
     "301": "Krems an der Donau",
-    "302": "Sankt Pölten (Stadt)",
+    "302": "Sankt PÃ¶lten (Stadt)",
     "303": "Waidhofen an der Ybbs (Stadt)",
     "304": "Wiener Neustadt (Stadt)",
     "305": "Amstetten",
     "306": "Baden",
     "307": "Bruck an der Leitha",
-    "308": "Gänserndorf",
-    "309": "Gmünd",
+    "308": "GÃ¤nserndorf",
+    "309": "GmÃ¼nd",
     "310": "Hollabrunn",
     "311": "Horn",
     "312": "Korneuburg",
@@ -55,9 +55,9 @@ gkz_list = {
     "314": "Lilienfeld",
     "315": "Melk",
     "316": "Mistelbach",
-    "317": "Mödling",
+    "317": "MÃ¶dling",
     "318": "Neunkirchen",
-    "319": "Sankt Pölten (Land)",
+    "319": "Sankt PÃ¶lten (Land)",
     "320": "Scheibbs",
     "321": "Tulln",
     "322": "Waidhofen an der Thaya",
@@ -76,10 +76,10 @@ gkz_list = {
     "411": "Perg",
     "412": "Ried im Innkreis",
     "413": "Rohrbach",
-    "414": "Schärding",
+    "414": "SchÃ¤rding",
     "415": "Steyr-Land",
     "416": "Urfahr-Umgebung",
-    "417": "Vöcklabruck",
+    "417": "VÃ¶cklabruck",
     "418": "Wels-Land",
     "501": "Salzburg (Stadt)",
     "502": "Hallein",
@@ -97,13 +97,13 @@ gkz_list = {
     "616": "Voitsberg",
     "617": "Weiz",
     "620": "Murtal",
-    "621": "Bruck-Mürzzuschlag",
-    "622": "Hartberg-Fürstenfeld",
-    "623": "Südoststeiermark",
+    "621": "Bruck-MÃ¼rzzuschlag",
+    "622": "Hartberg-FÃ¼rstenfeld",
+    "623": "SÃ¼doststeiermark",
     "701": "Innsbruck-Stadt",
     "702": "Imst",
     "703": "Innsbruck-Land",
-    "704": "Kitzbühel",
+    "704": "KitzbÃ¼hel",
     "705": "Kufstein",
     "706": "Landeck",
     "707": "Lienz",
@@ -115,7 +115,7 @@ gkz_list = {
     "804": "Feldkirch",
     "901": "Wien-Innere Stadt",
     "902": "Wien-Leopoldstadt",
-    "903": "Wien-Landstraße",
+    "903": "Wien-LandstraÃŸe",
     "904": "Wien-Wieden",
     "905": "Wien-Margareten",
     "906": "Wien-Mariahilf",
@@ -127,11 +127,11 @@ gkz_list = {
     "912": "Wien-Meidling",
     "913": "Wien-Hietzing",
     "914": "Wien-Penzing",
-    "915": "Wien-Rudolfsheim-Fünfhaus",
+    "915": "Wien-Rudolfsheim-FÃ¼nfhaus",
     "916": "Wien-Ottakring",
     "917": "Wien-Hernals",
-    "918": "Wien-Währing",
-    "919": "Wien-Döbling",
+    "918": "Wien-WÃ¤hring",
+    "919": "Wien-DÃ¶bling",
     "920": "Wien-Brigittenau",
     "921": "Wien-Floridsdorf",
     "922": "Wien-Donaustadt",
@@ -145,12 +145,12 @@ scnd_bez={}
 with open(l_file,"r", newline='',encoding="utf-8-sig") as csvfile:
     cov_reader = csv.DictReader(csvfile, delimiter=';')
     for row in cov_reader:
-        #Datum;Gemeindecode;Bevölkerung;Teilgeimpfte;TeilgeimpftePro100;Vollimmunisierte;VollimmunisiertePro100
+        #Datum;Gemeindecode;BevÃ¶lkerung;Teilgeimpfte;TeilgeimpftePro100;Vollimmunisierte;VollimmunisiertePro100
         date_str = row["Datum"]
         date_obj = datetime.strptime(date_str[0:10], "%Y-%m-%d")
         date = date_obj.strftime("%Y/%m/%d")
         gkz = row["Gemeindecode"][0:3]
-        pop = row["Bevölkerung"]
+        pop = row["BevÃ¶lkerung"]
         frst = row["Teilgeimpfte"]
         scnd = row["Vollimmunisierte"]
         bl=bl_list[int(gkz[0])-1]
@@ -206,3 +206,15 @@ with open(out_path + "vac_bez_pop.csv","a+", encoding='utf-8') as csv_popfile:
             csv_popfile.write(line_pop)
             csv_teilfile.write(line_frst)
             csv_vollfile.write(line_scnd)
+
+#with open(out_path + bl + "_bez.csv","w", encoding='utf-8') as csv_outfile:
+
+""" for b in bl:
+    with open(out_path + b + ".csv","w", encoding='utf-8') as csv_outfile:
+        #print(out_path + b + ".csv")
+        for l in reversed(line[b]):
+            csv_outfile.write(l)
+    with open(out_path + b + "_2.csv","w", encoding='utf-8') as csv_outfile:
+        #print(out_path + b + ".csv")
+        for l in reversed(line_2[b]):
+            csv_outfile.write(l) """
