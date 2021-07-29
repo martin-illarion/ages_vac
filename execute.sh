@@ -8,6 +8,9 @@ echo "$dt [INFO] git pull done"
 python3 get_vac.py
 echo "$dt [INFO] get_vac done"
 
+python3 vac_bezirke.py
+echo "$dt [INFO] vac_bezirke done"
+
 dat=$(date)
 
 /home/ubuntu/ages_vac/ages_vac/timeline-bbg.sh
