@@ -1,6 +1,7 @@
-﻿Woche,LieferungenBioNTechPfizer,PrognoseBioNTechPfizer,LieferungenModerna,PrognoseModerna,LieferungenAstraZeneca,PrognoseAstraZeneca,LieferungenJanssen,PrognoseJanssen,LieferungenNovavax,PrognoseNovavax
-2022-W10,,533520,,,,,,,,
-2022-W09,,532520,,69600,,,,,,
+Woche,LieferungenBioNTechPfizer,PrognoseBioNTechPfizer,LieferungenModerna,PrognoseModerna,LieferungenAstraZeneca,PrognoseAstraZeneca,LieferungenJanssen,PrognoseJanssen,LieferungenNovavax,PrognoseNovavax
+
+2022-W10,,532520,,69600,,,,,,1506000
+2022-W09,532520,,,,,,,,,
 2022-W08,213840,,84000,,345247,,,,1110000,
 2022-W07,207840,,54000,,,,,,,
 2022-W06,529140,,,,,,,,,
